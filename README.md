@@ -12,7 +12,7 @@ A simple command line program that simulates basic file system operations such a
 ****How to run tests**** :
 This program does not include tests other than the updating of functionalities for future use.
 
-****Functionality****
+**Available Commands******
 mkdir: creates a new directory
 touch: creates a new file
 cd: changes the current working directory
