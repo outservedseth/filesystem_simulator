@@ -1,6 +1,6 @@
-****FILE SYSTEM****
+****FILE SYSTEM SIMULATOR****
 
-A simple command line program that simulates basic file system operations such as creating directories and files, changing directories, listing the contents of a directory, and displaying the current working directory.
+A simple command line program that simulates basic file system commands such as creating directories and files, changing directories, listing the contents of a directory, and displaying the current working directory. 
 
 ****How to run the program****
 1. Make sure you have Python 3 installed on your machine.
