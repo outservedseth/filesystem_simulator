@@ -1,4 +1,4 @@
-******File System Simulator******
+****File System Simulator****
 
 A simple command line program that simulates basic file system operations such as creating directories and files, changing directories, listing the contents of a directory, and displaying the current working directory.
 
