@@ -12,13 +12,22 @@ A simple command line program that simulates basic file system operations such a
 ****How to run tests**** :
 This program does not include tests other than the updating of functionalities for future use.
 
-**Available Commands******
-mkdir: creates a new directory
-touch: creates a new file
-cd: changes the current working directory
-ls: lists the contents of the current working directory
-pwd: displays the current working directory
-exit: exits the program
+
+
+
+**Available Commands**
+
+'mkdir': creates a new directory
+
+'touch': creates a new file
+
+'cd': changes the current working directory
+
+'ls': lists the contents of the current working directory
+
+'pwd': displays the current working directory
+
+'exit': exits the program
 
 
 _Note that the pwd command may not display the correct path if the directory structure is too complex._
