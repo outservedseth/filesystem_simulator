@@ -30,4 +30,3 @@ This program does not include tests other than the updating of functionalities f
 'exit': exits the program
 
 
-_Note that the pwd command may not display the correct path if the directory structure is too complex._
