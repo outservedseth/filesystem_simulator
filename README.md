@@ -9,7 +9,7 @@ A simple command line program that simulates basic file system operations such a
 4. Run the command python file_system_sim.py to start the program.
 5. Follow the prompts in the program to use the various commands (pwd, mkdir, cd, touch, ls, exit).
 
-****How to run tests****
+****How to run tests**** :
 This program does not include tests other than the updating of functionalities for future use.
 
 ****Functionality****
