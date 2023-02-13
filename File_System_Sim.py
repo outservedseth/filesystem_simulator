@@ -1,16 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
-class Node: # create a node with boolean value
+class Node:
     def __init__(self, name:str, isFile:bool):
         self.name = name
         self.isFile = isFile
         self.children = []
+        self.parent = None
         
-    def add_child(self, child): # add child node to list of children for tree structure
+    def add_child(self, child):
+        child.parent = self
         self.children.append(child)
         
     def __repr__(self):
@@ -19,20 +18,45 @@ class Node: # create a node with boolean value
 class FileSystem:
     def __init__(self):
         self.root = Node("root", False)
-        self.current = self.root  # sets current directory to root
+        self.current = self.root
         
     def mkdir(self, name:str):
+        for child in self.current.children:
+            if child.name == name:
+                if not child.isFile:
+                    print(f"Directory {name} already exists.")
+                    return
+                else:
+                    print(f"{name} is a file.")
+                    return
         new_dir = Node(name, False)
         self.current.add_child(new_dir)
+     
         print(f"Directory {name} created.")
     
     def touch(self, name:str):
+        for child in self.current.children:
+            if child.name == name:
+                if child.isFile:
+                    print(f"File {name} already exists.")
+                    return
+                else:
+                    print(f"{name} is a directory.")
+                    return
         new_file = Node(name, True)
         self.current.add_child(new_file)
         print(f"File {name} created.")
     
     def cd(self, name:str):
-        for child in self.current.children: # navigate through directory with loop
+        if name == "..":
+            if self.current.parent is not None:
+                self.current = self.current.parent
+                print(f"Changed to parent directory.")
+                return
+            else:
+                print(f"Already in root directory.")
+                return
+        for child in self.current.children:
             if child.name == name:
                 if not child.isFile:
                     self.current = child
@@ -50,7 +74,7 @@ class FileSystem:
     def pwd(self):
         path = []
         node = self.current
-        while node.name != "root":
+        while node.parent is not None:
             path.append(node.name)
             node = node.parent
         print("/".join(path[::-1]))
